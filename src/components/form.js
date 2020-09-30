@@ -6,6 +6,7 @@ class Form extends React.Component {
     super();
     this.onSubmit = this.onSubmit.bind(this);
   }
+
   state = {
     name: "",
     email: "",
@@ -15,9 +16,6 @@ class Form extends React.Component {
     isModalOpen: true,
   };
 
-  handleCloseModal() {
-    this.setState({ isModalOpen: false });
-  }
   onChange(e) {
     // get target element name
     this.setState({ ...this.state, [e.target.name]: e.target.value });
@@ -49,17 +47,24 @@ class Form extends React.Component {
         email,
       });
 
-      const res = await axios.post(
-        "https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth",
-        body
-      );
+      try {
+        await axios.post(
+          "https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth",
+          body
+        );
 
-      if (res.data === "Registered") {
+        document.getElementsByClassName("submit-btn")[0].value = "Send";
+
         this.setState({ success: true });
-      } else {
-        document.getElementsByClassName("errorMessage")[0].innerHTML = res.data;
+      } catch (err) {
+        document.getElementsByClassName("errorMessage")[0].innerHTML =
+          err.response.data.errorMessage;
+        document.getElementsByClassName("submit-btn")[0].value = "Send";
+
+        setTimeout(() => {
+          document.getElementsByClassName("errorMessage")[0].innerHTML = "";
+        }, 6000);
       }
-      console.log(res, this.state.success);
     }
   }
 

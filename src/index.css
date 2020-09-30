@@ -107,6 +107,12 @@ nav {
   padding: 5% 10%;
 }
 
+.errorMessage {
+  font-style: italic;
+  font-weight: bold;
+  color: pink;
+}
+
 @media only screen and (max-width: 400px), only screen and (max-height: 600px) {
   .middle-wrapper {
     transform: scale(0.6);

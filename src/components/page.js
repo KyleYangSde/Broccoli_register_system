@@ -10,8 +10,11 @@ class Page extends React.Component {
 
   state = { isModalOpen: true };
 
-  handleCloseModal() {
+  async handleCloseModal() {
     this.setState({ isModalOpen: false });
+    setTimeout(() => {
+      this.setState({ isModalOpen: "" });
+    }, 1000);
   }
 
   render() {
