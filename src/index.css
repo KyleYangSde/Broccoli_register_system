@@ -1,13 +1,121 @@
-body {
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: content-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-image: url("./components/1.jpg");
+}
+
+nav {
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  background-clip: padding-box;
+  font-size: 1.5em;
+  background-color: white;
+  color: black;
+}
+
+.middle-section {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle-wrapper {
+  width: 45%;
+  height: 50%;
+  line-height: 3em;
+  font-family: monospace;
+}
+
+.slogon {
+  font-size: 3em;
+  font-weight: 580;
+}
+
+.sec-slogon {
+  margin-top: 10%;
+  color: grey;
+}
+
+.btn {
+  background-color: grey;
+}
+
+.btn:hover {
+  background-color: goldenrod;
+}
+
+.modal-header {
+  font-size: 1.2em;
+  font-style: italic;
+  font-weight: bold;
+  color: lightgrey;
+  margin-bottom: 2%;
+}
+
+.line {
+  border-top: 2px grey solid;
+  width: 5%;
+  text-align: center;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.submit-btn {
+  width: 95%;
+  margin-top: 5%;
+  background-color: grey;
+}
+
+.box-size {
+  width: 60%;
+  height: 80%;
+  padding: 5% 10%;
+  margin-left: 10%;
+}
+
+.message {
+  margin: 10%;
+  color: lightgrey;
+  font-weight: bold;
+}
+
+.submit-btn2 {
+  width: 80%;
+  margin-top: 5%;
+
+  background-color: grey;
+}
+
+.page-footer {
+  font-style: italic;
+  color: grey;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 6vh;
+  background-color: white;
+  border-top: 1px solid rgba(20, 18, 18, 0.5);
+}
+
+.myForm {
+  padding: 5% 10%;
+}
+
+@media only screen and (max-width: 400px), only screen and (max-height: 600px) {
+  .middle-wrapper {
+    transform: scale(0.6);
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 280px), only screen and (max-height: 600px) {
+  .middle-wrapper {
+    width: 80%;
+  }
 }
