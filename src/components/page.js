@@ -14,7 +14,7 @@ class Page extends React.Component {
     this.setState({ isModalOpen: false });
     setTimeout(() => {
       this.setState({ isModalOpen: "" });
-    }, 1000);
+    }, 100);
   }
 
   render() {
