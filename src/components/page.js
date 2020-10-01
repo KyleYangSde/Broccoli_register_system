@@ -8,7 +8,7 @@ class Page extends React.Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  state = { isModalOpen: true };
+  state = { isModalOpen: "" };
 
   async handleCloseModal() {
     this.setState({ isModalOpen: false });
